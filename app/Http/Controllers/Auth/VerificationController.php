@@ -36,6 +36,7 @@ class VerificationController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
+        // 这两个参数决定了在给定的分钟数内可以进行的最大请求数。 在这个例子中，我们限定了这两个动作访问频率是 1 分钟内不能超过 6 次
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
 }
