@@ -13,9 +13,6 @@
 
 Route::get('/', 'PagesController@root')->name('root');
 
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
 Auth::routes();
 /* 上边一句代码等同于以下
 // 用户身份验证相关的路由
