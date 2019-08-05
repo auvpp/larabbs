@@ -23,11 +23,15 @@
         <hr>
 
         {{-- The Content of publishing --}}
-        <div class="card ">
-            <div class="card-body">
-                No Data ~_~
-            </div>
-        </div>
+        <div class="card">
+      <div class="card-body">
+        <ul class="nav nav-tabs">
+          <li class="nav-item"><a class="nav-link active bg-transparent" href="#">Your topics</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Your replies</a></li>
+        </ul>
+        @include('users._topics', ['topics' => $user->topics()->recent()->paginate(5)])
+      </div>
+    </div>
 
     </div>
 </div>
