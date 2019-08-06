@@ -42,12 +42,26 @@ class UsersTableSeeder extends Seeder
         // 插入到数据库中
         User::insert($user_array);
 
-        // 单独处理第一个用户的数据
+        // 单独处理第1个用户的数据
         $user = User::find(1);
         $user->name = 'auvpp';
         $user->email = 'auvpp@qq.com';
         $user->avatar = 'https://cdn.learnku.com/uploads/images/201710/14/1/ZqM7iaP4CR.png';
         $user->save();
+
+        // 单独处理第2个用户的数据
+        $user = User::find(2);
+        $user->name = 'octyy';
+        $user->email = 'octyy@qq.com';
+        $user->avatar = 'https://cdn.learnku.com/uploads/images/201710/14/1/ZqM7iaP4CR.png';
+        $user->save();
+
+        // 初始化用户角色，将 1 号用户指派为『站长』
+        $user->assignRole('Founder');
+
+        // 将 2 号用户指派为『管理员』
+        $user = User::find(2);
+        $user->assignRole('Maintainer');
 
     }
 }
