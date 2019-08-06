@@ -1,5 +1,7 @@
 <div class="card ">
   <div class="card-body">
-    Navbar on right-side
+    <a href="{{ route('topics.create') }}" class="btn btn-success btn-block" aria-label="Left Align">
+      <i class="fas fa-pencil-alt mr-2"></i>  New Post
+    </a>
   </div>
 </div>
