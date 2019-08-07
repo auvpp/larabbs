@@ -7,8 +7,9 @@
         
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>@yield('title', 'LaraBBS') - Laravel Course L02</title>
-        <meta name="description" content="@yield('description', 'LaraBBS fans community')" />
+        <title>@yield('title', 'LaraBBS') - {{ setting('site_name', 'laravel L02 course') }}</title>
+        <meta name="description" content="@yield('description', setting('seo_description', 'larabbs fans community'))" />
+        <meta name="keyword" content="@yield('keyword', setting('seo_keyword', 'larabbs,community,forum,developer'))" />
         
         <!-- Styles -->
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
